@@ -6,9 +6,6 @@ from django.dispatch import receiver
 from django_countries.fields import CountryField
 
 
-# Create your models here.
-
-
 class UserProfile(models.Model):
     """
     A user profile model for maintaining default
@@ -30,7 +27,7 @@ class UserProfile(models.Model):
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
     """
-    create or update the user profile
+    Create or update the user profile
     """
     if created:
         UserProfile.objects.create(user=instance)
