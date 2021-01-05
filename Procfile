@@ -1,0 +1,1 @@
+web: gunicorn Boutique_aldo.wsgi:application
